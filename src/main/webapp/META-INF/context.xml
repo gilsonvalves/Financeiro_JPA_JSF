@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<Context reloadable="true">
+	<Resource name="jdbc/Financeiro1" auth="Container" type="javax.sql.DataSource"
+		maxActive="100" maxIdle="30" maxWait="10000" username="root" password="aldenora"
+		driverClassName="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost/financeiro"/>
+</Context>
