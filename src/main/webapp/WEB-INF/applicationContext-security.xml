@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.o.xsd
+http://www.springframework.org/schema/security
+http://www.springframework.org/schema/security/spring-security.xcd">
+	<http auto-config="true">
+		<intercept-url pattern="/admin/**" acces="ROLE_ADMINISTRADOR" />
+		<intercept-url pattern="/restrito/**" acces="ROLE_USUARIO" />
+		<form-login login-page="/publico/login.jsf"
+			always-use-default-target="true" default-traget-url="/restrito/principal.jsf"
+			authentication-failure-url="/publico/login.jsf?login_error=1" />
+		<logout />
+		<remember-me />
+	</http>
+	<authentication-manager>
+		<authentication-provider>
+			<jdbc-user-service data-souce-ref="financeiroDataSource"
+				authorities-by-username-query="SELECT u.loggin, p.permissao
+											FROM usuario u, usuario_permissao p 
+										WHERE u.codigo = p.usuario AND u.login=?"
+	user-by-username-query="SELECT login, senha, ativo FROM usuario WHERE login = ?"/>		
+		</authentication-provider>
+	</authentication-manager>
+</beans:beans>
