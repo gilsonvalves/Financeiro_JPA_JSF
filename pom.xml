@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.gilsonvalves</groupId>
 	<artifactId>Financeiro1</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2</version>
 	<packaging>war</packaging>
 
 	<!-- Codificacao do caracter -->
@@ -36,7 +36,13 @@
 			<version>4.3.11.Final</version>
 		</dependency>
 
-		<!-- spring -->
+		<!-- spring security -->
+		
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>3.0.4.RELEASE</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-config</artifactId>
@@ -52,7 +58,6 @@
 			<artifactId>spring-security-web</artifactId>
 			<version>3.1.0.RELEASE</version>
 		</dependency>
-
 
 		<!-- MySQL Connector -->
 		<dependency>
@@ -75,8 +80,5 @@
 			<version>7.0</version>
 			<scope>provided</scope>
 		</dependency>
-
-
-
 	</dependencies>
 </project>
