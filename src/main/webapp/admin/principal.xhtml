@@ -29,6 +29,22 @@
 				</h:commandLink>
 			</h:column>
 			<h:column>
+				<f:facet name="header">Permisões</f:facet>
+				<h:commandLink
+					action="#{usuarioBean.atribuiPermissao(usuario,'ROLE_ADMINISTRADOR')}"
+					title="Permissao Administrador">
+					<h:graphicImage library="imagens"
+						name="ROLE_ADMINISTRADOR_#{usuario.permissao.contains('ROLE_ADMINISTRADOR')}.png" sytle="borde:0"/>	
+				</h:commandLink>
+				
+				<h:commandLink
+					action="#{usuarioBean.atribuiPermissao(usuario,'ROLE_USUARIO_VIP')}"
+					title="Permissão Usuário VIP">
+					<h:graphicImage library="imagens"
+						name="ROLE_USUARIO_VIP_#{usuario.permissao.contains('ROLE_USUARIO_VIP')}.png" sytle="borde:0"/>	
+				</h:commandLink>
+			</h:column>
+			<h:column>
 				<f:facet name="header">Codigo</f:facet>
 			#{usuario.codigo}
 			</h:column>

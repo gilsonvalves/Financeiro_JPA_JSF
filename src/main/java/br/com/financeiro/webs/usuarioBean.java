@@ -77,6 +77,16 @@ public class usuarioBean {
 		usuarioRN.salvar(this.usuario);
 		return null;
 	}
+	public String atribuiPermissao(Usuario usuario, String permissao) {
+		this.usuario = usuario;
+		java.util.Set<String> permissoes = this.usuario.getPermissao();
+		if(permissoes.contains(permissao)) {
+			permissoes.remove(permissao);
+		}else {
+			permissoes.add(permissao);
+		}
+		return null;
+	}
 	
 	public List<Usuario> getLista(){
 		if(this.lista == null) {
